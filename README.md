@@ -1,66 +1,34 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Hudsyn – A Free Headless CMS for Laravel (dev project, pre-composer)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Hudsyn** is a lightweight, headless content management system (CMS) designed specifically for Laravel projects. Named after my newborn daughter, Hudsyn was built to solve a common problem I encountered while developing awesome Laravel applications: the landing page (or main website) was often an afterthought, even though it’s crucial to deliver a fast, beautifully-rendered public web presence.
 
-## About Laravel
+## Why Hudsyn?
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Seamless Integration:**  
+  Hudsyn is built entirely in Laravel. It lives alongside your internal tools, SaaS apps, or any other Laravel-based architecture without jeopardizing performance or adding bulky dependencies.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Performance:**  
+  Hudsyn uses static file generation for pages, press releases, and blog posts. This approach delivers blazing-fast load times while still allowing easy content management via an admin panel.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Lightweight Alternative:**  
+  Unlike bulky solutions such as WordPress or expensive commercial CMSs like Statamic, Hudsyn offers a free, open-source solution that is simple, modular, and designed specifically for the Laravel ecosystem.
 
-## Learning Laravel
+- **Flexibility:**  
+  Manage your pages, blog posts, press releases, custom routes, layouts, global settings, and file uploads (including an integrated image gallery for WYSIWYG editors). Everything is designed to be extended and customized to your needs.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Key Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Dashboard & Administration:**  
+  An intuitive admin panel that allows you to manage users, pages, blog posts, press releases, custom routes, layouts, and settings—all within your Laravel project.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Static File Generation:**  
+  Automatically generates static HTML files for your public content, ensuring fast page load times and low server overhead.
 
-## Laravel Sponsors
+- **File Upload & Gallery:**  
+  Upload files through a dedicated interface that shows thumbnails for image files and provides direct links to the filesystem. The gallery popup integrates with your WYSIWYG editor for easy image insertion.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **WYSIWYG Editor Integration:**  
+  Integrate CKEditor (or your favorite editor) with custom configuration for uploading and inserting images from your gallery.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Custom Template Placeholders:**  
+  Use key/value pairs defined in settings to inject dynamic content into your pages via simple placeholders (e.g. `{{get:keyname}}`).
