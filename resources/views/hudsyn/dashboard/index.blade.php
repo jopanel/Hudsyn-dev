@@ -22,7 +22,6 @@
                 <li><a href="{{ route('hudsyn.pages.index') }}">Pages</a></li>
                 <li><a href="{{ route('hudsyn.blog.index') }}">Blog</a></li>
                 <li><a href="{{ route('hudsyn.press-releases.index') }}">Press Releases</a></li>
-                <li><a href="{{ route('hudsyn.social.index') }}">Social</a></li>
                 <li><a href="{{ route('hudsyn.custom-routes.index') }}">Custom Routes</a></li>
                 <li><a href="{{ route('hudsyn.layouts.index') }}">Layouts</a></li>
                 <li><a href="{{ route('hudsyn.settings.index') }}">Settings</a></li>

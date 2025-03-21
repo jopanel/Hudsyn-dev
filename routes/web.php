@@ -13,8 +13,6 @@ use App\Http\Controllers\Hudsyn\SettingController;
 use App\Http\Controllers\Hudsyn\StaticPublishingController;
 use App\Http\Controllers\Hudsyn\PublicPageController;
 use App\Http\Controllers\Hudsyn\FileUploadController;
-use App\Http\Controllers\Hudsyn\TinyUrlController;
-use App\Http\Controllers\Hudsyn\SocialController;
 use App\Http\Middleware\HudsynMiddleware;
 
 // -----------------------
@@ -43,10 +41,6 @@ Route::group(['prefix' => 'hudsyn', 'middleware' => [HudsynMiddleware::class]], 
     Route::resource('custom-routes', CustomRouteController::class, ['as' => 'hudsyn']);
     Route::resource('layouts', LayoutController::class, ['as' => 'hudsyn']); 
     Route::resource('settings', SettingController::class, ['as' => 'hudsyn']);
-    Route::resource('social', SocialController::class, ['as' => 'hudsyn']);
-    Route::get('social/preview/{id}', [SocialController::class, 'preview'])
-    ->name('hudsyn.social.preview');
-
     Route::get('files/gallery', [FileUploadController::class, 'gallery'])->name('hudsyn.files.gallery');
     Route::post('files/upload-image', [FileUploadController::class, 'uploadImage'])->name('hudsyn.files.upload-image');
     Route::resource('files', FileUploadController::class, ['as' => 'hudsyn'])->except(['show']);
@@ -66,40 +60,5 @@ Route::get('/{slug}', [PublicPageController::class, 'showPage'])->name('hudsyn.p
 
 // Public Press Release: http://hudsyn/press/{slug}
 Route::get('/press/{slug}', [PublicPageController::class, 'showPressRelease'])->name('hudsyn.public.press');
-
-// Public Redirection Route for Tiny URLs
-Route::get('/s/{short_code}', [TinyUrlController::class, 'redirect'])
-    ->name('hudsyn.tinyurl.redirect');
-
-// Cron route to process scheduled social posts
-Route::get('/hudsyn/cron', [SocialController::class, 'processScheduledPosts'])
-    ->name('hudsyn.cron');
-
-// Social Media Authentication Routes
-Route::prefix('hudsyn')->group(function () {
-    // Twitter (X) Routes
-    Route::get('/twitter/auth', [SocialController::class, 'twitterAuth'])
-        ->name('hudsyn.twitter.auth');
-    Route::get('/twitter/callback', [SocialController::class, 'twitterCallback'])
-        ->name('hudsyn.twitter.callback');
-
-    // LinkedIn Routes
-    Route::get('/linkedin/auth', [SocialController::class, 'linkedinAuth'])
-        ->name('hudsyn.linkedin.auth');
-    Route::get('/linkedin/callback', [SocialController::class, 'linkedinCallback'])
-        ->name('hudsyn.linkedin.callback');
-
-    // Facebook Routes
-    Route::get('/facebook/auth', [SocialController::class, 'facebookAuth'])
-        ->name('hudsyn.facebook.auth');
-    Route::get('/facebook/callback', [SocialController::class, 'facebookCallback'])
-        ->name('hudsyn.facebook.callback');
-
-    // Instagram Routes
-    Route::get('/instagram/auth', [SocialController::class, 'instagramAuth'])
-        ->name('hudsyn.instagram.auth');
-    Route::get('/instagram/callback', [SocialController::class, 'instagramCallback'])
-        ->name('hudsyn.instagram.callback');
-});
 
 
